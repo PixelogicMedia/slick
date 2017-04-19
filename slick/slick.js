@@ -15,6 +15,8 @@
 
  */
 /* global window, document, define, jQuery, setInterval, clearInterval */
+var dom = {};
+dom.query = jQuery.noConflict();
 (function(factory) {
     'use strict';
     if (typeof define === 'function' && define.amd) {
@@ -22,7 +24,7 @@
     } else if (typeof exports !== 'undefined') {
         module.exports = factory(require('jquery'));
     } else {
-        factory(jQuery);
+        factory(dom.query);
     }
 
 }(function($) {
